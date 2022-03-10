@@ -96,6 +96,7 @@ export default {
       width: calc((100% / 5) - 20px);
       height: 220px;
       text-align: center;
+      cursor: pointer;
       background: #2d3a46;
 
       .card-image {
