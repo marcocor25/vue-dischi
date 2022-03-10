@@ -31,7 +31,7 @@ export default {
   text-align: center;
   user-select: none;
   cursor: pointer;
-  filter: drop-shadow(4px 4px 6px black);
+  filter: drop-shadow(4px 4px 6px #000000);
   transition: 300ms linear;
   background: #2d3a46;
 
@@ -53,7 +53,7 @@ export default {
   &:hover {
     transform: scale(0.95);
     background: #334250;
-    filter: drop-shadow(2px 2px 3px black);
+    filter: drop-shadow(2px 2px 3px #000000);
   }
 }
 </style>
