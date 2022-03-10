@@ -1,74 +1,36 @@
 <template>
   <div class="main">
     <div class="container">
-      <div class="card">
-        <figure class="card-image"></figure>
-        <h3>title</h3>
-        <p>mario rossi</p>
-        <p>2022</p>
-      </div>
-      <div class="card">
-        <figure class="card-image"></figure>
-        <h3>title</h3>
-        <p>mario rossi</p>
-        <p>2022</p>
-      </div>
-      <div class="card">
-        <figure class="card-image"></figure>
-        <h3>title</h3>
-        <p>mario rossi</p>
-        <p>2022</p>
-      </div>
-      <div class="card">
-        <figure class="card-image"></figure>
-        <h3>title</h3>
-        <p>mario rossi</p>
-        <p>2022</p>
-      </div>
-      <div class="card">
-        <figure class="card-image"></figure>
-        <h3>title</h3>
-        <p>mario rossi</p>
-        <p>2022</p>
-      </div>
-      <div class="card">
-        <figure class="card-image"></figure>
-        <h3>title</h3>
-        <p>mario rossi</p>
-        <p>2022</p>
-      </div>
-      <div class="card">
-        <figure class="card-image"></figure>
-        <h3>title</h3>
-        <p>mario rossi</p>
-        <p>2022</p>
-      </div>
-      <div class="card">
-        <figure class="card-image"></figure>
-        <h3>title</h3>
-        <p>mario rossi</p>
-        <p>2022</p>
-      </div>
-      <div class="card">
-        <figure class="card-image"></figure>
-        <h3>title</h3>
-        <p>mario rossi</p>
-        <p>2022</p>
-      </div>
-      <div class="card">
-        <figure class="card-image"></figure>
-        <h3>title</h3>
-        <p>mario rossi</p>
-        <p>2022</p>
-      </div>
+      <MyCards
+        v-for="(element, index) in cardsArray"
+        :key="index"
+        :cardsDetails="element"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import MyCards from "../components/MyCards.vue";
+import axios from "axios";
+
 export default {
   name: "MyMain",
-  props: {},
+  components: {
+    MyCards,
+  },
+  data() {
+    return {
+      cardsArray: [],
+    };
+  },
+  created() {
+    axios
+      .get("https://flynn.boolean.careers/exercises/api/array/music")
+      .then((res) => {
+        this.cardsArray = res.data.response;
+      });
+  },
 };
 </script>
 
@@ -83,38 +45,9 @@ export default {
 
   .container {
     width: 60vw;
-    min-height: 10vh;
-    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    border: 2px dashed yellow;
-
-    .card {
-      flex-grow: 1;
-      padding: 10px;
-      width: calc((100% / 5) - 20px);
-      height: 220px;
-      text-align: center;
-      cursor: pointer;
-      background: #2d3a46;
-
-      .card-image {
-        aspect-ratio: 1/1;
-        background: rebeccapurple;
-      }
-
-      h3 {
-        padding: 10px 0;
-        text-transform: uppercase;
-      }
-
-      p {
-        text-transform: capitalize;
-        font-size: 12px;
-        color: #7b7e77;
-      }
-    }
   }
 }
 </style>
