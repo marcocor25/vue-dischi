@@ -29,7 +29,10 @@ export default {
   min-height: 240px;
   padding: 12px;
   text-align: center;
+  user-select: none;
   cursor: pointer;
+  filter: drop-shadow(4px 4px 6px black);
+  transition: 300ms linear;
   background: #2d3a46;
 
   .card-image {
@@ -45,6 +48,12 @@ export default {
     text-transform: capitalize;
     font-size: 12px;
     color: #7b7e77;
+  }
+
+  &:hover {
+    transform: scale(0.95);
+    background: #334250;
+    filter: drop-shadow(2px 2px 3px black);
   }
 }
 </style>
