@@ -27,6 +27,12 @@ export default {
   box-sizing: border-box;
 }
 
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 #app {
   height: 100vh;
   display: flex;
