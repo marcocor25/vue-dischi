@@ -3,18 +3,12 @@
     <figure class="logo">
       <img src="../assets/img/logo.png" alt="Spotify" />
     </figure>
-    <SearchBar />
   </div>
 </template>
 
 <script>
-import SearchBar from "../components/SearchBar.vue";
-
 export default {
   name: "MyHeader",
-  components: {
-    SearchBar,
-  },
 };
 </script>
 

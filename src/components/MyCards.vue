@@ -3,7 +3,7 @@
     <figure class="card-image">
       <img :src="cardsDetails.poster" :alt="cardsDetails.title" />
     </figure>
-    <h5>{{ cardsDetails.title }}</h5>
+    <h6>{{ cardsDetails.title }}</h6>
     <p>{{ cardsDetails.author }}</p>
     <p>{{ cardsDetails.year }}</p>
   </div>
@@ -26,8 +26,8 @@ export default {
 .card {
   flex-grow: 1;
   width: calc((100% / 5) - 20px);
-  min-height: 240px;
-  padding: 12px;
+  min-height: 210px;
+  padding: 10px;
   text-align: center;
   user-select: none;
   cursor: pointer;
@@ -36,10 +36,11 @@ export default {
   background: #2d3a46;
 
   .card-image {
+    margin: 0 auto;
     aspect-ratio: 1/1;
   }
 
-  h5 {
+  h6 {
     padding: 10px 0;
     text-transform: uppercase;
   }

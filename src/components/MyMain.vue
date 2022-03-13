@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <SearchBar />
     <div class="container">
       <MyCards
         v-for="(element, index) in cardsArray"
@@ -11,12 +12,14 @@
 </template>
 
 <script>
+import SearchBar from "../components/SearchBar.vue";
 import MyCards from "../components/MyCards.vue";
 import axios from "axios";
 
 export default {
   name: "MyMain",
   components: {
+    SearchBar,
     MyCards,
   },
   data() {
@@ -39,7 +42,8 @@ export default {
 .main {
   flex-grow: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   background: #1d2d3b;
 
